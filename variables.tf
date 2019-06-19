@@ -4,17 +4,17 @@ variable "count" {
 
 variable "key_name" {
   description = "Private key name to use with instance"
-  default     = "terraform"
+  default     = "wu-itio-cloud"
 }
 
 variable "instance_type" {
   description = "AWS instance type"
-  default     = "t3.small"
+  default     = "t2.small"
 }
 
 variable "ami" {
   description = "Base AMI to launch the instances"
 
   # Bitnami NGINX AMI
-  default = "ami-021acbdb89706aa89"
+  default = "ami-0645e5a5cad677df8"
 }
