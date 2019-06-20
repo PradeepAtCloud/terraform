@@ -2,12 +2,10 @@
 String credentialsId = 'cf646997-c326-4f48-870a-211dafcd3e66'
 
 try {
-  stage('checkout') {
+ stage('checkout') {
     node {
       cleanWs()
-	  dir('/home/ubuntu') {
-      checkout scm
-	} 
+      checkout scm
     }
   }
 
