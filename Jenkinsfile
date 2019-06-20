@@ -2,14 +2,13 @@
 String credentialsId = 'cf646997-c326-4f48-870a-211dafcd3e66'
 
 try {
- stage('checkout') {
+  stage('checkout') {
     node {
       cleanWs()
       checkout scm
     }
   }
- 
- 
+
   // Run terraform init
   stage('init') {
     node {
@@ -20,6 +19,9 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
+		  sh 'cp /opt/jenkins/workspace/terraform-multibranch_master/* /home/ubuntu'
+		  sh 'cd /home/ubuntu'
+		  sh 'pwd'
           sh 'terraform init'
         }
       }
