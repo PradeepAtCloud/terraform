@@ -5,7 +5,9 @@ try {
   stage('checkout') {
     node {
       cleanWs()
-	  dir('/home/ubuntu')
+	  dir('subDir') {
+      checkout scm
+	} 
       checkout scm
     }
   }
