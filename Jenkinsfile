@@ -20,9 +20,10 @@ try {
       ]]) {
         ansiColor('xterm') {
 		  sh 'sudo cp -rf /opt/jenkins/workspace/terraform-multibranch_master/* /home/ubuntu'
-		  sh 'cd /home/ubuntu'
-		  sh 'pwd'
-          sh 'terraform init'
+		  dir("/home/ubuntu") {
+    		   sh "pwd"
+		}
+                  sh 'terraform init'
         }
       }
     }
