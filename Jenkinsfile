@@ -19,7 +19,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-		  sh 'cp /opt/jenkins/workspace/terraform-multibranch_master/* /home/ubuntu'
+		  sh 'sudo cp -rf /opt/jenkins/workspace/terraform-multibranch_master/* /home/ubuntu'
 		  sh 'cd /home/ubuntu'
 		  sh 'pwd'
           sh 'terraform init'
